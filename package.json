@@ -1,0 +1,23 @@
+{
+  "name": "web-app-demos",
+  "version": "1.0.0",
+  "description": "demonstration of various APIs and concepts",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/net-art-uchicago/web-app-demos.git"
+  },
+  "author": "Nick Briz <nbriz@uchicago.edu>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/net-art-uchicago/web-app-demos/issues"
+  },
+  "homepage": "https://github.com/net-art-uchicago/web-app-demos#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
