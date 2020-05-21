@@ -51,6 +51,28 @@
 
       getDog()
       getGeo()
+      postFPrint()
+
+      function postFPrint () {
+        const data = {
+          userAgent: navigator.userAgent,
+          language: navigator.language,
+          color: screen.colorDepth,
+          height: screen.height,
+          width: screen.width
+        }
+
+        const url = 'api/fingerprint'
+        const req = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }
+        fetch(url, req)
+          .then(res => res.json())
+          .then(data => { console.log(data) })
+      }
+
 
       function getDog () {
         const dog = document.querySelector('#dog')
