@@ -43,45 +43,24 @@
     <main>
       <div>
         <div id="title">hello</div>
-        <img src="" id="dog">
+        <img src="" id="cat">
+
       </div>
     </main>
 
     <script>
 
-      getDog()
+      getCat()
       getGeo()
-      postFPrint()
 
-      function postFPrint () {
-        const data = {
-          userAgent: navigator.userAgent,
-          language: navigator.language,
-          color: screen.colorDepth,
-          height: screen.height,
-          width: screen.width
-        }
-
-        const url = 'api/fingerprint'
-        const req = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        }
-        fetch(url, req)
-          .then(res => res.json())
-          .then(data => { console.log(data) })
-      }
-
-
-      function getDog () {
-        const dog = document.querySelector('#dog')
-        const url = 'https://dog.ceo/api/breeds/image/random'
+      function getCat () {
+        const cat = document.querySelector('#cat')
+        const url = '/api/random-cat'
         const req = { method: 'GET' }
         fetch(url, req)
           .then(res => res.json())
           .then(data => {
-            dog.setAttribute('src', data.message)
+            cat.setAttribute('src', data.message)
           })
       }
 

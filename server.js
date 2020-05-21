@@ -1,40 +1,12 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const crypto = require('crypto')
-const fs = require('fs')
-const db = require('./database.json')
+const restAPI = require('./my_modules/rest-api.js')
 const port = 8000
 
 app.use(bodyParser.json())
-
-app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/www/index.html`)
-})
-
-function updateDB () {
-  const data = JSON.stringify(db, null, 2)
-  fs.writeFile('./database.json', data, (err) => {
-    if (err) console.log('something went wrong', err)
-    else console.log('database was updated!')
-  })
-}
-
-app.post('/api/fingerprint', (req, res) => {
-  const md5 = crypto.createHash('md5')
-  const str = JSON.stringify(req.body)
-  const bfp = md5.update(str, 'utf8').digest('hex')
-
-  if (db.hasOwnProperty(bfp)) {
-    db[bfp].push(Date.now())
-  } else {
-    db[bfp] = [Date.now()]
-  }
-
-  updateDB()
-
-  res.json({ message: 'got it!' })
-})
+app.use(restAPI)
+app.use(express.static('www'))
 
 app.listen(port, (err) => {
   if (err) return console.log(err)
