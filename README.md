@@ -1,4 +1,5 @@
 # Dogs && Forecasts
+## with a custom server
 
 ![screenshot](screenshot.png)
 
