@@ -1,6 +1,6 @@
-# Cats && Forecasts
-## custom server with a custom REST API
+# Chatroom
+## socket API
 
 ![screenshot](screenshot.png)
 
-This simple web app has very similar client-side (browser side) code from the [fetch](https://github.com/net-art-uchicago/web-app-demos/tree/fetch) example, as well as it's own custom server similar to the one I made in the [custom-server](https://github.com/net-art-uchicago/web-app-demos/tree/custom-server) example, except that rather than using the DOG CEO API to request a random dog image, I've created my own REST API which the index page sends a fetch request to in order to retrieve a random cat image.
+This web app builds on all of the previous apps and adds an additional form of communication between the client and server called [Sockets](https://socket.io), rather than simply sending HTTP requests between the client and server, a socket maintains an open connection between both client and server so that either can communicate with the other at any time. this allows for functionality that wouldn't be possible with a REST API (like creating a chat room!).

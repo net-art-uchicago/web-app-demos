@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Major Mono Display";
+  src: url("fonts/MajorMonoDisplay-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Major Mono Display", monospace;
+  background: black;
+  transition: all 3s;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ `*/
+/* ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . SPLASH PAGE _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ `*/
+/* ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ `*/
+
+#splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#splash > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#splash #title {
+  font-size: 20px;
+  text-align: center;
+  padding: 38px;
+  max-width: 700px;
+  text-transform: lowercase;
+}
+
+#splash img {
+  cursor: pointer;
+  text-align: center;
+}
+
+
+/* ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ `*/
+/* ` ~ . _ . ~ ` ~ . _ . ~ ` ~ .  CHATROOM   _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ `*/
+/* ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ `*/
+
+
+
+header {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 70vh;
+}
+
+.row {
+  background-color: rgba(0,0,0,0.5);
+  max-width: 700px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-info > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+footer {
+  background: black;
+  height: 15vh;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 14px;
+}
+
+.inputs > input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-family: "Major Mono Display";
+  font-weight: bold;
+}
+
+#username {
+  width: 100px;
+}
+
+#message {
+  width: 400px;
+}
+
+#submit {
+  background: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Major Mono Display";
+  font-weight: bold;
+  cursor: pointer;
+}

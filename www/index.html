@@ -2,101 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Web App</title>
-    <style>
-
-      body {
-        margin: 0;
-        padding: 0;
-      }
-
-      main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-
-      main > div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      #title {
-        font-size: 20px;
-        font-family: sans-serif;
-        text-align: center;
-        padding: 38px;
-      }
-
-      img {
-        text-align: center;
-      }
-
-
-    </style>
+    <title>CyberCatz Chat Room</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
 
-    <main>
+    <section id="splash">
       <div>
         <div id="title">hello</div>
-        <img src="" id="cat">
-
+        <a href="chatroom">
+          <img src="" id="cat">
+        </a>
       </div>
-    </main>
+    </section>
 
-    <script>
-
-      getCat()
-      getGeo()
-
-      function getCat () {
-        const cat = document.querySelector('#cat')
-        const url = '/api/random-cat'
-        const req = { method: 'GET' }
-        fetch(url, req)
-          .then(res => res.json())
-          .then(data => {
-            cat.setAttribute('src', data.message)
-          })
-      }
-
-      function getGeo () {
-        const url = 'https://location.services.mozilla.com/v1/geolocate?key=test'
-        const req = { method: 'GET' }
-        fetch(url, req)
-          .then(res => res.json())
-          .then(data => getNWSpoint(data))
-      }
-
-      function getNWSpoint (data) {
-        const lat = data.location.lat
-        const lon = data.location.lng
-        const url = `https://api.weather.gov/points/${lat},${lon}`
-        const req = { method: 'GET' }
-        fetch(url, req)
-          .then(res => res.json())
-          .then(data => getNWSforecast(data))
-      }
-
-      function getNWSforecast (data) {
-        const office = data.properties.cwa
-        const x = data.properties.gridX
-        const y = data.properties.gridY
-        const url = `https://api.weather.gov/gridpoints/${office}/${x},${y}/forecast`
-        const req = { method: 'GET' }
-        fetch(url, req)
-          .then(res => res.json())
-          .then(data => {
-            const f = data.properties.periods[0].detailedForecast
-            const t = document.querySelector('#title')
-            t.textContent = f
-          })
-      }
-
-    </script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

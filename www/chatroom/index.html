@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CyberCatz Chat Room</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <header>
+      <h1>CyberCatz Chat Room</h1>
+    </header>
+
+    <main>
+
+      <div class="row">
+        <div class="user-info">
+          <img src="../images/cute.jpg">
+          <b>pawderator:</b>
+        </div>
+        <span>welcome fellow feline</span>
+      </div>
+
+    </main>
+
+    <footer>
+      <div class="inputs">
+        <input type="text" value="anon" id="username">
+        <input type="text" placeholder="what do u have to say?" id="message">
+        <button id="submit"> send </button>
+      </div>
+    </footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/chatroom.js"></script>
+
+  </body>
+</html>

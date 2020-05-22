@@ -1,14 +1,19 @@
 const express = require('express')
 const app = express()
+const http = require('http').createServer(app)
 const bodyParser = require('body-parser')
+const io = require('socket.io')(http)
 const restAPI = require('./my_modules/rest-api.js')
+const socketAPI = require('./my_modules/socket-api.js')
 const port = 8000
 
 app.use(bodyParser.json())
 app.use(restAPI)
 app.use(express.static('www'))
 
-app.listen(port, (err) => {
+io.on('connection', (socket) => socketAPI(socket, io))
+
+http.listen(port, (err) => {
   if (err) return console.log(err)
   console.log(`
     Listening on http://localhost:${port}
