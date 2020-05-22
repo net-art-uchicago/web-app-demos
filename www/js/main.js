@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
   randomBG()
-  getCat()
+  // getCat()
   getGeo()
 })

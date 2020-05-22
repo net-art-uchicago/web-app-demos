@@ -25,6 +25,13 @@ h1 {
 /* ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . SPLASH PAGE _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ `*/
 /* ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ ` ~ . _ . ~ `*/
 
+canvas {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
 #splash {
   display: flex;
   justify-content: center;
@@ -39,12 +46,18 @@ h1 {
   align-items: center;
 }
 
+#splash a {
+  text-decoration: none;
+}
+
 #splash #title {
   font-size: 20px;
   text-align: center;
   padding: 38px;
   max-width: 700px;
   text-transform: lowercase;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
 }
 
 #splash img {
